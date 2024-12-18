@@ -2,17 +2,19 @@ version: '3.5'
 
 services:
   laravel-app:
-    image: php:8.1-apache
+    image: bitnami/laravel:latest
     container_name: laravel-app
     ports:
       - "8000:80"
     volumes:
-      - .:/var/www/html
+      - .:/app
     networks:
       - backend
     environment:
-      - APACHE_RUN_USER=#1000
-      - APACHE_RUN_GROUP=#1000
+      - DB_HOST=mysql-db
+      - DB_DATABASE=laravel
+      - DB_USERNAME=laraveluser
+      - DB_PASSWORD=laravelpassword
     depends_on:
       - mysql-db
 
