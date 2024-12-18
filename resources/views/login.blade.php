@@ -35,6 +35,8 @@
         }
         ?>
 
+        <h1>TESTE</h1>
+
         {{-- Comentário do blade, não aparece na tela. --}}
     </body>
 </html>
